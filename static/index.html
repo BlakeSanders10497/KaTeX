@@ -11,7 +11,27 @@
 \left( \frac{a}{b} \right) \left( \frac{a^2}{b} \right)
 \left( \dfrac{a}{b} \right) \left( \dfrac{a^2}{b} \right)
         </textarea>
+        <div id="settings">
+            <h3>Settings:</h3>
+            <label for="display">   displayMode:    </label>   <input id="display" type="checkbox" name="display" checked=true> <br>
+            <label for="leqno">     leqno:          </label>   <input id="leqno"   type="checkbox" name="leqno">   <br>
+            <label for="fleqn">     fleqn:          </label>   <input id="fleqn"   type="checkbox" name="fleqn">   <br>
+            <label for="strict">    strict:         </label>
+            <select name="strict" id="strict">
+                    <option value="warn">   warn    </option>
+                    <option value="error">  error   </option>
+            </select><br>
+            <label for="trust">     trust:          </label>    <input id="trust"   type="checkbox" name="trust">  <br><br>
+            <h4>Macros:</h4>
+            <textarea id="macros" rows=10>
+{
+"\\f": "#1f(#2)"
+}
+            </textarea><br>
+            <input id="permalink" type="button" value="Get Permalink"> <br>
+        </div>
         <div id="math"></div>
-        <input id="permalink" type="button" value="permalink">
+        
+        
     </body>
 </html>

@@ -8,10 +8,12 @@ import queryString from 'query-string';
 
 function init() {
     const input = document.getElementById("input");
+    const settings = document.getElementById("settings");
     let math = document.getElementById("math");
     const permalink = document.getElementById("permalink");
 
     input.addEventListener("input", reprocess, false);
+    settings.addEventListener("click", reprocess);
     permalink.addEventListener("click", setSearch);
 
     const options = {displayMode: true, throwOnError: true, trust: true};
@@ -94,6 +96,8 @@ function init() {
     }
 
     function reprocess() {
+        updateSettings();
+
         // Ignore changes to global macros caused by the expression
         options.macros = Object.assign({}, macros);
         try {
@@ -105,6 +109,14 @@ function init() {
                 throw e;
             }
         }
+    }
+
+    function updateSettings() {
+        options.displayMode = document.getElementById("display").checked;
+        options.leqno       = document.getElementById("leqno").checked;
+        options.fleqn       = document.getElementById("fleqn").checked;
+        options.strict      = document.getElementById("strict").value;
+        options.trust       = document.getElementById("trust").checked;
     }
 
     if (module.hot) {

@@ -5,7 +5,19 @@ body {
 }
 
 #math {
+    margin-top: 20px;
+    position: fixed;
     font-size: 72px;
+    width: 80%;
+    left: 20%;
+}
+
+#settings {
+    position: fixed;
+    padding: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 20%;
+    left: 0%;
 }
 
 #input {
@@ -13,4 +25,8 @@ body {
     font-size: 100%;
     width: 100%;
     box-sizing: border-box;
+}
+
+#strict {
+    font-size: 80%;
 }
